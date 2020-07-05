@@ -13,7 +13,7 @@ from matplotlib import pyplot as plt
 
 
 
-""" 2020
+""" 2015 - Py 2
 # Open the telescope file, read only. That way if we get any true data
 # from a telescope, we won't mess it up.
 ff = open('telescope.txt', 'r')
@@ -40,9 +40,7 @@ def err(b,y,r1):
 def peval(r1, b):
     return b[0]/r1
 
-# Theoretically we can dissect the list I called c here and pull out all the values of 
-# x,y, e1, e2 and whatnot to find gamma. That's mostly math stuff. 
-"""
+""" 2015 -- Code was written for Py 2
 # Create empty arrays with placeholders for each value obtained from the file.
 x=empty(size); y = empty(size); e1= empty(size); e2 = empty(size); ei = empty(size, dtype = 'cfloat')
 # These are empty arrays with placeholders for information calculated.
@@ -56,7 +54,7 @@ e1 = []; e2 = []; ei = []
 r = []; g =[]; ef = []
 
 countlines = 0
-# 2020 -- Open file and read each line as well as the data
+# Open file and read each line as well as the data
 # within and add to the empty lists.
 with open('telescope.txt', 'r') as ff:
     for line in ff:
@@ -73,7 +71,7 @@ with open('telescope.txt', 'r') as ff:
         countlines +=1        
 
 
-""" 2020 
+""" 2015 -- Py 2
 ff.close() # This is obvious.
 # Every ith element here is a particular galaxy. 
 for i in range(0,size):
@@ -88,9 +86,12 @@ for i in range(0,size):
     g[i] = ef[i] # Are we supposed to assume the shear is approximately equal to the total ellipticity?
 2020
 """ 
+
+# "Donut" is a visualization of a bin that contains certain data points within
+# a given inner and outer radius. 
 donut1 = []; donut2 = []; donut3 = []; donut4 = []; donut5 = [];
 donut6 = []; donut7 = []; donut8 = []; donut9 = []; donut10 = []; donut11 = [];
-# Bins, donuts, rings, buckets, whatever. Call them whatever you like.
+
 # For every element, e, in r, iterate
 k = 0
 for e in r:
